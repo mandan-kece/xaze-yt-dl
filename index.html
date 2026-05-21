@@ -3,44 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xaze Downloader YT</title>
+    <title>YT Downloader | MP4 & MP3</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗿</text></svg>">
 </head>
 <body>
+    <!-- Animated BG -->
+    <div class="bg-gradient"></div>
+    <div class="bg-particles"></div>
+
     <div class="container">
-        <div class="header">
-            <h1>XZ</h1>
-            <p>Download video & audio dari YouTube</p>
+        <!-- HEADER -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🗿</span>
+                <h1>YT<span class="accent">Down</span></h1>
+            </div>
+            <p class="subtitle">Download video & audio YouTube tanpa iklan</p>
+        </header>
+
+        <!-- SEARCH CARD -->
+        <div class="search-card">
+            <form id="downloadForm" class="search-box">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="urlInput" 
+                        placeholder="Tempel link YouTube di sini..."
+                        autocomplete="off"
+                        required
+                    >
+                    <button type="button" id="clearBtn" class="clear-btn hidden">✕</button>
+                </div>
+                <button type="submit" id="submitBtn" class="submit-btn">
+                    <span id="btnText">🔍 Cari</span>
+                    <span id="btnLoading" class="hidden">
+                        <span class="spinner-small"></span>
+                    </span>
+                </button>
+            </form>
+            <p class="hint">Support: youtube.com & youtu.be</p>
         </div>
 
-        <form id="downloadForm" class="search-box">
-            <input 
-                type="text" 
-                id="urlInput" 
-                placeholder="Tempel link YouTube di sini..."
-                autocomplete="off"
-                required
-            >
-            <button type="submit" id="submitBtn">
-                <span id="btnText">Cari</span>
-                <span id="btnLoading" class="hidden">⏳</span>
-            </button>
-        </form>
+        <!-- ERROR -->
+        <div id="errorMsg" class="error-card hidden"></div>
 
-        <div id="errorMsg" class="error hidden"></div>
-
-        <div id="loadingState" class="loading hidden">
+        <!-- LOADING -->
+        <div id="loadingState" class="loading-card hidden">
             <div class="spinner"></div>
             <p>Mengambil data video...</p>
+            <span class="loading-sub">Ini mungkin butuh beberapa detik</span>
         </div>
 
-        <div id="resultContainer" class="result hidden">
-            <!-- akan diisi dari JS -->
-        </div>
+        <!-- RESULT -->
+        <div id="resultContainer" class="result-card hidden"></div>
     </div>
 
+    <!-- FOOTER -->
     <footer>
-        <p>ᴘᴏᴡᴇʀᴇᴅ ʙʏ<span> ғɪᴋʀɪ.ᴢ</span>| ©2026 sᴜɴɢᴀɪ ᴍᴀɴᴅᴀɴ</p>
+        <p>Powered by <span>fikri.z</span>| • ©2026 Sungai mandan</p>
     </footer>
 
     <script src="script.js"></script>
